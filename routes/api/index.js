@@ -1,11 +1,11 @@
 //Setting up the routes for express Server . 
 const router =  require("express").Router(); 
 const userRoutes = require('./user-routes'); 
-const thoughtsRoutes = require('./thoughts-routes')
+const thoughtsRoutes = require('./thought-routes')
 
 // 'api/users/'
 router.use('/users', userRoutes); 
 // 'api/thoughts/'
-router.use('/thoughts', thoughtsRoutes )
+router.use('/thoughts', thoughtRoutes )
 
 module.exports = router; 

@@ -28,6 +28,8 @@ router.get('/all', (req, res) => {
             res.json(err);
         });
 });
+
+
 /*
 app.post('/submit', ({ body }, res) => {
     Note.create(body)
