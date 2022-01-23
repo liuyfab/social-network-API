@@ -1,34 +1,36 @@
-/*
-
-
-GET a single user by its _id and populated thought and friend data
-
-POST a new user:
-
-// example data
-{
-  "username": "lernantino",
-  "email": "lernantino@gmail.com"
-}
-PUT to update a user by its _id
-
-DELETE to remove user by its _id
-*/
-const { User } = require('../../models');
 //Setting up the routes for express Server . 
 const router = require("express").Router();
+const {
+  getAllUsers,
+  getUserById,
+  addUser,
+  updateUser,
+  deleteUser,
+  addFriend,
+  removeFriend
+} = require('../../controllers/user-controller');
 
-// 'api/users/all'  -- GET all users
-router.get('/all', (req, res) => {
-    User.find({})
-        .then(dbUserData => {
-            res.json(dbUserData);
-        })
-        .catch(err => {
-            res.json(err);
-        });
-});
+// get all users & create a new user
+router
+  .route('/')
+  .get(getAllUsers)
+  .post(addUser);
 
+//get, update, delet user by its id
+router
+  .route('/:id')
+  .get(getUserById)
+  .put(updateUser)
+  .delete(deleteUser);
+
+//  add, remove a friend from a user's friend array
+router
+  .route('/:userId/friends/:friendId')
+  .post(addFriend)
+  .delete(removeFriend);
+
+
+module.exports = router;
 
 /*
 app.post('/submit', ({ body }, res) => {
