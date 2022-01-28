@@ -41,7 +41,7 @@ const thoughtController = {
                 .json({ message: `No thought found with id: ${params.thoughtId}` });
               return;
             }
-            res.json(dThoughtbData);
+            res.json(dbThoughtData);
           })
           .catch(err => {
             console.log(err);
@@ -51,8 +51,9 @@ const thoughtController = {
 
     // Update Thought by its id
     updateThought({ params, body }, res) {
+      console.log("Update", body ); 
         Thought.findOneAndUpdate(
-          { _id: params.thoughtId }, body,
+          { _id: params.thoughtId }, {$set: body},
           { new: true, runValidators: true })
           .then(dbThoughtData => {
             if (!dbThoughtData) {
@@ -60,6 +61,7 @@ const thoughtController = {
                 .json({ message: `No thought found with id: ${params.thoughtId}` });
               return;
             }
+            console.log(dbThoughtData);
             res.json(dbThoughtData);
           })
           .catch(err => res.json(err));
