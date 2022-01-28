@@ -3,11 +3,11 @@
 # Description
 This project is the back-end of social media api using MongoDB and Mongoose. Insomnia can be used for demonstration and testing.
 
-# Walkthrough Video link
-https://blooming-wildwood-16551.herokuapp.com/
+# Walk-through Video link
+https://youtu.be/wj1-STz_Xrs
 
 # Table of Contents
-* [Video](#walkthrough video link)
+* [Video](#Walk-through Video link)
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
