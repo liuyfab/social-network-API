@@ -18,6 +18,8 @@ Clone the repo to your local machine and install the dependencies by 'npm instal
 # Usage
 Start Insomnia and use the API methods such as POST, GET, PUT, and DELETE users, and user thoughts at http://localhost:3001.
 
+![Landing Page](https://github.com/liuyfab/social-network-API/blob/main/assets/Screenshot.png?raw=true)
+
 ## License
   # MIT
   ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
